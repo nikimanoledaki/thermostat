@@ -36,5 +36,10 @@ describe('Thermostat', function() {
     it('is on by default', function() {
       expect(thermostat.isPowerSavingModeOn()).toBe(true);
     });
+
+    it('can be switched off', function() {
+      thermostat.switchOffPowerSavingMode();
+      expect(thermostat.isPowerSavingModeOn()).toBe(false);
+    });
   });
 });
