@@ -49,4 +49,55 @@ describe('Thermostat', function() {
       expect(thermostat.isPowerSavingModeOn()).toBe(true);
     });
   });
+
+  describe('Maximum temperature is', function() {
+    it('25 degrees if power saving mode is on', function() {
+      for (var i = 0; i < 6; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.currentTemperature()).toEqual(25);
+    });
+
+    it('32 degrees if power saving moden is off', function() {
+      thermostat.switchOffPowerSavingMode();
+      for (var i = 0; i < 13; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.currentTemperature()).toEqual(32);
+    });
+  });
+
+  describe('Temperature', function() {
+    it('can be reset to 20', function() {
+      thermostat.resetTemperature();
+      expect(thermostat.currentTemperature()).toBe(20);
+    });
+  });
+
+  describe('Says usage, which is', function() {
+    it('low when < 18', function() {
+      for (var i = 0; i < 3; i++) {
+      thermostat.down();
+      }
+      expect(thermostat.isUsage()).toBe("low-usage");
+    });
+
+    it('medium when < 25', function() {
+      for (var i = 0; i < 3; i++) {
+      thermostat.up();
+      }
+      expect(thermostat.isUsage()).toBe("medium-usage");
+    });
+
+    it('medium when < 25', function() {
+      for (var i = 0; i < 6; i++) {
+      thermostat.up();
+      }
+      expect(thermostat.isUsage()).toBe("high-usage");
+    });
+  });
 });
+
+// < 18 is low-usage
+// < 25 is medium-usage
+// anything else is high-usage.
