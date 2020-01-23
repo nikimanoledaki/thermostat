@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Thermostat</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="./../src/jquery.js"></script>
+    <script src="./../src/thermostat.js"></script>
+    <script src="./../src/text.js"></script>
+
+  </head>
+
+  <body>
+    <section>
+
+      <h2>current temperature</h2>
+      <h1><span id="temperature"></span> degrees celsius</h1>
+
+      <p>
+        <button id="temperature-up">+</button>
+        <button id="temperature-down">-</button>
+        <br>
+        <button id="temperature-reset">reset</button>
+        <br>
+        <h2>power saving mode is <span id="power-saving-status">on</span></h2>
+        <br>
+        <button id="powersaving-on">PSM on</button>
+        <button id="powersaving-off">PSM off</button>
+      </p>
+
+    </section>
+
+    <script>
+      var thermostat = new Thermostat();
+
+      $(document).ready(function() {
+        $("#temperature").text(thermostat.currentTemperature())
+        updateTemperature();
+      });
+
+      $("#temperature-up").click(function() {
+        $("#temperature").text(thermostat.up());
+        updateTemperature();
+      });
+
+      $("#temperature-down").click(function() {
+        $("#temperature").text(thermostat.down());
+        updateTemperature();
+      });
+
+      $("#temperature-reset").click(function() {
+        $("#temperature").text(thermostat.resetTemperature());
+        updateTemperature();
+      });
+
+      $("#powersaving-on").click(function() {
+        thermostat.switchOnPowerSavingMode;
+        $("#power-saving-status").text("on");
+        updateTemperature();
+      });
+
+      $("#powersaving-off").click(function() {
+        thermostat.switchOffPowerSavingMode;
+        $("#power-saving-status").text("off");
+        updateTemperature();
+      });
+
+      function updateTemperature() {
+        $('#temperature').text(thermostat.temperature);
+        if(thermostat.isUsage() === 'low-usage') {
+          $('#temperature').css('color', 'green')
+        } else if (thermostat.isUsage() === 'medium-usage') {
+          $('#temperature').css('color', 'orange')
+        } else {
+          $('#temperature').css('color', 'red')
+        }
+      };
+
+    </script>
+
+  </body>
+</html>

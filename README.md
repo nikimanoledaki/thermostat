@@ -40,4 +40,8 @@ I want a reset function
 As a user
 So that I can be informed 
 I want to see the thermostat's current energy usage
+
+As a user
+So that I can change the temperature accordingly
+I want to see the weather information for my city
 ```
