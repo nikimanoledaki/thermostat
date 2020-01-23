@@ -13,7 +13,7 @@ describe('Thermostat', function() {
     });
   });
 
-  describe('changing temperature', function() {
+  describe('Changing temperature', function() {
     it('by increasing it', function() {
       thermostat.up();
       expect(thermostat.currentTemperature()).toEqual(21);
@@ -58,9 +58,9 @@ describe('Thermostat', function() {
       expect(thermostat.currentTemperature()).toEqual(25);
     });
 
-    it('32 degrees if power saving moden is off', function() {
+    it('32 degrees if power saving mode is off', function() {
       thermostat.switchOffPowerSavingMode();
-      for (var i = 0; i < 13; i++) {
+      for (var i = 0; i < 14; i++) {
         thermostat.up();
       }
       expect(thermostat.currentTemperature()).toEqual(32);
