@@ -7,14 +7,12 @@
     <link rel="stylesheet" href="style.css">
     <script src="./../src/jquery.js"></script>
     <script src="./../src/thermostat.js"></script>
-    <script src="./../src/text.js"></script>
-
   </head>
 
   <body>
     <section>
 
-      <h2>current temperature</h2>
+      <h2>thermostat temperature</h2>
       <h1><span id="temperature"></span> degrees celsius</h1>
 
       <p>
@@ -27,6 +25,7 @@
         <br>
         <button id="powersaving-on">PSM on</button>
         <button id="powersaving-off">PSM off</button>
+        <h2>outside temperature: <span id="city-temperature"></span> degrees celsius</h2>
       </p>
 
     </section>
@@ -76,6 +75,10 @@
           $('#temperature').css('color', 'red')
         }
       };
+ 
+      $.get("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=4567243b4fdb4880a5da284238f6b4e5&units=metric", function(data) {
+      $('#city-temperature').text(data.main.temp)
+      });
 
     </script>
 
