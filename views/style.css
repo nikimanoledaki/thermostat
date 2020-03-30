@@ -1,5 +1,5 @@
 body {
-  background-color: darkslategrey;
+  background-color: black;
   color: azure;
   text-align: center;
   font-size: 1.6em;
@@ -19,10 +19,10 @@ h2 {
 
 button {
   display: inline-block;
-  font-size: 0.8em;
+  font-size: 0.6em;
   padding:0.35em 1.2em;
   border:0.1em solid #FFFFFF;
-  margin:0 0.3em 0.3em 0;
+  margin:0.3em 0.3em 0.3em 0.3em;
   border-radius:0.12em;
   box-sizing: border-box;
   font-weight: 300;
@@ -57,4 +57,16 @@ button:hover {
   80%{bottom:-2em;}
   90%{left:-2em;}
   100%{left:-4em;}
+}
+
+input {
+  font-size: 0.6em;
+  font-family: 'Roboto', sans-serif;
+  padding: 12px 20px;
+}
+
+input[type="submit"] {
+  font-size: 0.5em;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px 15px;
 }

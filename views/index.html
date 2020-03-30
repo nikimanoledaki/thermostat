@@ -17,7 +17,7 @@
       <h1><span id="temperature"></span> degrees celsius</h1>
 
       <p>
-        <button id="temperature-up">+</button>
+        <button class="button bouncy" id="temperature-up">+</button>
         <button id="temperature-down">-</button>
         <br>
         <button id="temperature-reset">reset</button>
@@ -27,13 +27,12 @@
         <button id="powersaving-on">PSM on</button>
         <button id="powersaving-off">PSM off</button>
         
-        <section>
-          <h2>outside temperature: <span id="city-temperature"></span> degrees celsius</h2>
-          <form id="select-city">
-            <input id="current-city" type="text" placeholder="Enter a city"/>
-            <input type="submit"></input>
-          </form>
-        </section>
+        <h2>outside temperature: <span id="city-temperature"></span> degrees celsius</h2>
+        
+        <form id="select-city">
+          <input id="current-city" type="text" placeholder="Enter a city"/>
+          <button id="submit_button" type="submit">submit</button>
+        </form>
       </p>
 
     </section>
