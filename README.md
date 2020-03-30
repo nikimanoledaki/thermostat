@@ -1,7 +1,21 @@
 # Thermostat
 
-The model logic of a thermostat app.
-It is written in JavaScript and test-driven with Jasmine. This project was created as part of Week 5 at Makers, where we are taught how to code in a new programming language.
+## Description
+A single page application with the model logic of a thermostat app that calls on the OpenWeatherMap API. This web app is fully tested with Jasmine. This project was created as part of Week 5 at Makers.
+
+## Getting started
+```
+$ git clone https://github.com/nikimanoledaki/thermostat.git
+$ open ./views/index.html
+```
+
+## Run the tests
+Launch the Jasmine tests from the root of the directory.
+```
+$ open SpecRunner.html
+```
+
+No installation is needed. A new page should pop up in your browser.
 
 ## User Stories
 ```
